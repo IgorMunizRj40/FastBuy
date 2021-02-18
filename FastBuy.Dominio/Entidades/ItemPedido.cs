@@ -8,7 +8,11 @@
 
         public override void Validate()
         {
-            
+            if (ProdutoId == 0)
+                AdicionarCritica("Não foi identificado qual a referência do produto.");
+
+            if (Quantidade == 0)
+                AdicionarCritica("A quantidade do produto não foi informada.");
         }
     }
 }

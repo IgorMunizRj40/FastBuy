@@ -28,10 +28,10 @@ namespace FastBuy.Dominio.Entidades
             LimparMensagemValidacao();
 
             if (!ItensPedido.Any())
-                AdicionarCritica("Crítica - Pedido não pode ficar sem item de pedido");
+                AdicionarCritica("Crítica - Pedido não pode ficar sem item de pedido.");
 
             if (string.IsNullOrEmpty(CEP))
-                AdicionarCritica("Crítica - CEP deve estar preenchido");
+                AdicionarCritica("Crítica - CEP deve estar preenchido.");
 
         }
     }

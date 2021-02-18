@@ -14,7 +14,11 @@ namespace FastBuy.Dominio.Entidades
 
         public override void Validate()
         {
-            throw new System.NotImplementedException();
+            if (string.IsNullOrEmpty(Email))
+                AdicionarCritica("O Email não foi informado.");
+
+            if (string.IsNullOrEmpty(Senha))
+                AdicionarCritica("A Senha não foi informada.");
         }
     }
 }
