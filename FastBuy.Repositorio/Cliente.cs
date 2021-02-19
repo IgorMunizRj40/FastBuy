@@ -7,11 +7,11 @@ namespace FastBuy.Repositorio
     {
         public Cliente()
         {
-            var ususarioRepositorio = new UsuarioRepositorio();
+            var usuarioRepositorio = new UsuarioRepositorio();
             var produto = new Produto();
-            var ususario = new Usuario();
+            var usuario = new Usuario();
 
-            UsuarioRepositorio.Adicionar(Usuario);
+            usuarioRepositorio.Adicionar(usuario);
         }
     }
 }
