@@ -1,5 +1,6 @@
 ﻿using FastBuy.Dominio.Entidades;
 using FastBuy.Dominio.ObjetoDeValor;
+using FastBuy.Repositorio.Config;
 using Microsoft.EntityFrameworkCore;
 
 namespace FastBuy.Repositorio.Contexto
@@ -17,6 +18,18 @@ namespace FastBuy.Repositorio.Contexto
         public FastBuyContexto(DbContextOptions options) : base(options)
         {
 
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Classes de mapeamento aqui...
+            modelBuilder.ApplyConfiguration(new UsuarioConfiguration());
+            modelBuilder.ApplyConfiguration(new ProdutoConfiguration());
+            modelBuilder.ApplyConfiguration(new ItemPedidoConfiguration());
+            modelBuilder.ApplyConfiguration(new PedidoConfiguration());
+            modelBuilder.ApplyConfiguration(new FormaPagamentoConfiguration());
+
+            base.OnModelCreating(modelBuilder);
         }
 
 
