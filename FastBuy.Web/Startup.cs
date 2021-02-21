@@ -28,8 +28,10 @@ namespace FastBuy.Web
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             
-            var connectionString = Configuration.GetConnectionString("SqlServerConnection");
-            services.AddDbContext<FastBuyContexto>(option => option.UseSqlServer(connectionString,m => m.MigrationsAssembly("FastBuy.Repositorio")));
+            var connectionString = Configuration.GetConnectionString("FastBuyDB");
+            services.AddDbContext<FastBuyContexto>(option => 
+                                        option.UseSqlServer(connectionString, 
+                                            m => m.MigrationsAssembly("FastBuy.Repositorio")));
            
 
             // In production, the Angular files will be served from this directory

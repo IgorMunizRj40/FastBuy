@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "FastBuyDB": "Server=localhost;Database=FastBuyDB;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
+}
