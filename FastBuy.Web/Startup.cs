@@ -29,8 +29,9 @@ namespace FastBuy.Web
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             
             var connectionString = Configuration.GetConnectionString("FastBuyDB");
-            services.AddDbContext<FastBuyContexto>(option => 
-                                        option.UseSqlServer(connectionString, 
+            services.AddDbContext<FastBuyContexto>(option =>
+                                        option.UseLazyLoadingProxies()//carrega de forma automatica os relacionamentos
+                                        .UseSqlServer(connectionString, 
                                             m => m.MigrationsAssembly("FastBuy.Repositorio")));
            
 
